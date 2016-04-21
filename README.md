@@ -1,3 +1,15 @@
+# Playing here...
+
+This is my attempt to keep semi-current with some languages while learning others, in this case my playing with the HackerRank 30 Tutorial (beginner java), but in this case implementing the challenges in
+
++ Java
++ JavaScript
++ Python
++ Clojure
++ C++
+
+The directories are numbered by the challenge. There should be a readme, and potentially a script file of some sort to run, or compile and run the code.
+
 #30 Days of Code
 
 https://www.hackerrank.com/domains/tutorials/30-days-of-code
