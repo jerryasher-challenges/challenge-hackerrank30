@@ -24,7 +24,6 @@ public class Solution {
           } else {
               ans = "Not Weird";
           }
-
       }
       System.out.println(ans);
    }
