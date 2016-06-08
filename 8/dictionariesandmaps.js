@@ -15,7 +15,11 @@ process.stdin.on('end', function () {
 });
 
 function readLine() {
+  if (input_currentline < input_stdin_array.length) {
     return input_stdin_array[input_currentline++];
+  } else {
+    return false;
+  }
 }
 
 /////////////// ignore above this line ////////////////////
@@ -23,10 +27,21 @@ function readLine() {
 function main() {
   var N = parseInt(readLine());
   var statement = "";
-  var line = readLine();
-  line = line.split(" ");
-  line = line.reverse();
-  line = line.join(" ") + "\n";
-  process.stdout.write(line);
+  var phonebook = {};
+  for (var i = 0; i < N; i++) {
+    var line = readLine();
+    var pair = line.split(" ");
+    phonebook[pair[0]] = pair[1];
+  }
+
+  while (query = readLine()) {
+    if (query in phonebook) {
+      process.stdout.write(query + "=" + phonebook[query]);
+    } else {
+      process.stdout.write("Not found");
+    }
+    process.stdout.write("\n");
+  }
+
 }
 

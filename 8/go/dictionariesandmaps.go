@@ -7,14 +7,28 @@ func main() {
 	var n int
 	fmt.Scanf("%d", &n)
 	// var line string
-	var slice = make([]int, n)
-
+	var name string
+	var num int
+	var phonebook = make(map[string]int)
 	for l := 0; l < n; l++ {
-		fmt.Scanf("%d", &slice[l])
+		fmt.Scanf("%s", &name)
+		fmt.Scanf("%d", &num)
+		phonebook[name] = num
 	}
 
-	for l := n - 1; l >= 0; l-- {
-		fmt.Printf("%d ", slice[l])
+	for {
+		var query string
+		_, err := fmt.Scanf("%s", &query)
+		if err != nil {
+			break
+		}
+
+		num, ok := phonebook[query]
+		if ok {
+			fmt.Printf("%s=%d\n", query, num)
+		} else {
+			fmt.Printf("Not found\n")
+		}
+
 	}
-	fmt.Printf("\n")
 }
